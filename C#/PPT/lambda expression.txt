@@ -1,0 +1,16 @@
+public int Square(int i)
+{
+return i*i;
+}
+(int i)=>i*i //lambda expression
+public string Greet(string n)
+{
+return "Hello "+n;
+}
+(n)=>"Hello "+n; //lambda expression
+
+public int Add(int a,int b)
+{
+return a+b;
+}
+(a,b)=>a+b //lambda expression

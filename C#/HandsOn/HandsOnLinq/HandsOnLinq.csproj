@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <StartupObject>HandsOnLinq.Demo7</StartupObject>
+    <StartupObject>HandsOnLinq.Demo3</StartupObject>
   </PropertyGroup>
 
 </Project>

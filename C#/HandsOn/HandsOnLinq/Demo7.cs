@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HandsOnLinq
 {
@@ -39,7 +37,7 @@ namespace HandsOnLinq
             var result = from s in students
                          join e in enrolls
                          on s.Id equals e.Id
-                         select new { Id = s.Id, Name = s.Name, CName = e.CName};
+                         select new { Id = s.Id, Name = s.Name, CName = e.CName };
             foreach (var item in result)
             {
                 Console.WriteLine($"ID:{item.Id} Name:{item.Name} Course:{item.CName}");

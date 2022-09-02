@@ -1,0 +1,14 @@
+
+
+\\d ->any degit
+\\D -> any char except degit
+\\w-allow any alpha numeric char
+{no}-limit of char
+{min,max}
+[]-grouing  of values
+\char->only that char
+.->any char 
+
++ ->one or more occurence
+* ->zero or more occurence
+-? one occurence

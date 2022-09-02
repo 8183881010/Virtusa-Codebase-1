@@ -1,0 +1,1 @@
+aspnet_regsql -d TrainingDB -S SANTU-PC\PARSI -E -ssadd -sstype c

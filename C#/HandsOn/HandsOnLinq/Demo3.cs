@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HandsOnLinq
 {
@@ -30,11 +28,11 @@ namespace HandsOnLinq
             e1 = employees.Where(i => i.Ename.StartsWith("R")).First();
             e1 = employees.Where(i => i.Ename.StartsWith("R")).Last();
             //FirstOrDefault() return null when there is no items in sequence
-            e1 = employees.Where(i => i.Ename.StartsWith("T")).FirstOrDefault();
-            if(e1!=null)
-            Console.WriteLine("{0} {1}", e1.Eid, e1.Ename);
+            //e1 = employees.Where(i => i.Ename.StartsWith("T")).FirstOrDefault();
+            if (e1 != null)
+                Console.WriteLine("{0} {1}", e1.Eid, e1.Ename);
             //LastOrDefault() return null when there is no items in sequence
-            e1 = employees.Where(i => i.Ename.StartsWith("T")).LastOrDefault();
+            e1 = employees.Where(i => i.Ename.StartsWith("J")).LastOrDefault();
             if (e1 != null)
                 Console.WriteLine("{0} {1}", e1.Eid, e1.Ename);
             e1 = employees.Where(i => i.Eid == 1).Single();//when sequence contains only one element
@@ -47,19 +45,19 @@ namespace HandsOnLinq
             //ToList() used when sequence contain more than one element.
             List<Employee> employees1 = employees.Where(i => i.Ename.StartsWith("R")).ToList();
             e1 = employees.Where(i => i.Eid > 3).ElementAt(1); //returns element at 2nd index
-            e1 = employees.Where(i => i.Eid > 3).ElementAtOrDefault(10);
-            if(e1!=null)
+            e1 = employees1.Where(i => i.Eid > 3).ElementAtOrDefault(0);
+            if (e1 != null)
             {
                 Console.WriteLine("{0} {1}", e1.Eid, e1.Ename);
             }
-            Console.Clear();
+            //Console.Clear();
             //Group by
             var result2 = (from i in employees group i by i.Salary);
             result2 = employees.GroupBy(i => i.Salary);
-            foreach(var item in result2)
+            foreach (var item in result2)
             {
                 Console.WriteLine("Employee havding salary of {0} ", item.Key);
-                foreach(var i in item)
+                foreach (var i in item)
                 {
                     Console.WriteLine("Name:{0}", i.Ename);
                 }

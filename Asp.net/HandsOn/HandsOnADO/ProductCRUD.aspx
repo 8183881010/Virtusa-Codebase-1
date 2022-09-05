@@ -19,30 +19,34 @@
                     <td>ProductId</td>
                     <td>
                         <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtId" ErrorMessage="Pls Enter Id" ValidationGroup="VG"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>ProductName</td>
                     <td>
                         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtName" ErrorMessage="Pls Enter Name" ValidationGroup="VG"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>Price</td>
                     <td>
                         <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPrice" ErrorMessage="Pls Enter Price" ValidationGroup="VG"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>Stock</td>
                     <td>
                         <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtStock" ErrorMessage="Pls Enter Stock" ValidationGroup="VG"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:Button ID="Button1" runat="server" OnClick="Add_Product" Text="Add" />
+                        <asp:Button ID="Button1" runat="server" OnClick="Add_Product" Text="Add" ValidationGroup="VG" />
 &nbsp;<asp:Button ID="Button2" runat="server" OnClick="Search_Product" Text="Search" />
                     </td>
                 </tr>

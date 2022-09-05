@@ -21,6 +21,7 @@ namespace HandsOnControlls
             if(uname=="Rohan" && pwd=="12345")
             {
                 //Redirect to welcome page
+               // Response.Redirect("Welcome.aspx);
                 Response.Redirect("Welcome.aspx?un="+uname);
                 //Response.Redirect("http://google.co.in");
             }

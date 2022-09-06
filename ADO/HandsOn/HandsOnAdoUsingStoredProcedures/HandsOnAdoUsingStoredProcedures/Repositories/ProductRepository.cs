@@ -132,7 +132,7 @@ namespace HandsOnAdoUsingStoredProcedures.Repositories
                     products = new List<Product>();
                     while (reader.Read())
                     {
-                        connection.Close();
+                      
                         products.Add(new Product()
                         {
                             Pid = (int)reader["Pid"],

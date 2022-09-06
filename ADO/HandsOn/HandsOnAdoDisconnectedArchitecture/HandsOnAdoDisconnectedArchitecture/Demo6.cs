@@ -12,7 +12,7 @@ namespace HandsOnAdoDisconnectedArchitecture
     {
         public static void WriteXml()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=SANTU\MSSQLSERVER2019;Initial Catalog=Training1DB;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=SANTU\MSSQLSERVER2019;Initial Catalog=VirtusaDB;Integrated Security=True");
             SqlDataAdapter da = null;
             da = new SqlDataAdapter("Selec * from Product", con);
             DataSet ds = new DataSet("Products");

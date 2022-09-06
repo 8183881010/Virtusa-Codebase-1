@@ -9,7 +9,7 @@ namespace HandsOnAdoDisconnectedArchitecture
 {
     class Demo3
     {
-        SqlConnection con = new SqlConnection(@"DESKTOP-4O1D65I\SQLEXPRESS;Initial Catalog=TrainingDB;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"SANTU\MSSQLSERVER2019;Initial Catalog=VirtusaDB;Integrated Security=True");
      
         SqlDataAdapter da = null;
        

@@ -12,8 +12,8 @@ namespace HandsOnAdoDisconnectedArchitecture
     class Demo1
     {
         //SqlConnection con = new SqlConnection(ConfigurationManager.AppSettings["SqlConnection"]);
-        SqlConnection con = new SqlConnection(@"DESKTOP-4O1D65I\SQLEXPRESS;Initial Catalog=TrainingDB;Integrated Security=True");
-        SqlConnection con1=new SqlConnection(@"Data Source=SANTU\MSSQLSERVER2019;Initial Catalog=Pubs;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=SANTU\MSSQLSERVER2019;Initial Catalog=VirtusaDB;Integrated Security=True");
+      
         SqlDataAdapter da = null;
         DataSet ds = null;
         public void GetEmployees()
@@ -24,20 +24,13 @@ namespace HandsOnAdoDisconnectedArchitecture
             ds = new DataSet();
             //fill the dataset
             da.Fill(ds, "Employee");
-            da = new SqlDataAdapter("Select * from Sales", con1);
-            da.Fill(ds, "Sales");
-            Console.WriteLine("Sales Records");
+           
             foreach(DataRow row in ds.Tables["Employee"].Rows)
             {
                 Console.WriteLine("ID:{0} Name:{1} Salary:{2} JoinDate:{3}", row["Eid"], row["Ename"], 
                     row["Salary"], row["JoinDate"]);
             }
-            Console.WriteLine("Product Records");
-            foreach (DataRow row in ds.Tables["Sales"].Rows)
-            {
-                Console.WriteLine("ID:{0} Number:{1} Date:{2} Qty:{3}", row["Stor_id"], row["Ord_num"], 
-                    row["Ord_Date"], row["qty"]);
-            }
+           
           
 
         }

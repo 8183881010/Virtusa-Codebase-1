@@ -11,37 +11,37 @@ namespace HandsOnAdoDisconnectedArchitecture
     {
         SqlConnection con = new SqlConnection(@"Data Source=SANTU\MSSQLSERVER2019;Initial Catalog=Training1DB;Integrated Security=True");
         SqlDataAdapter da = null;
-        DataTable dt = null;
+        DataSet ds = null;
         SqlCommandBuilder cb = null;
         public ProductCRUD()
         {
             da = new SqlDataAdapter("Select * from Product", con);
             cb = new SqlCommandBuilder(da);
-            dt = new DataTable("Product");
-            da.Fill(dt);
+            ds = new DataSet("Product");
+            da.Fill(ds);
             //set Primary key
-            dt.PrimaryKey = new DataColumn[] { dt.Columns["Pid"] };
+            ds.Tables["Product"].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns["Pid"] };
         }
         public void AddProduct(int Pid,string Pname,int Price,int Stock)
         {
-            DataRow dr = dt.NewRow();
+            DataRow dr = ds.Tables[0].NewRow();
             dr["Pid"] = Pid;
             dr["Pname"] = Pname;
             dr["Price"] = Price;
             dr["Stock"] = Stock;
-            dt.Rows.Add(dr); //adding new row to the DataTable.
-            da.Update(dt);
+            ds.Tables["Product"].Rows.Add(dr); //adding new row to the DataTable.
+            da.Update(ds);
         }
         public void DeleteProduct(int Pid)
         {
-            dt.Rows.Find(Pid).Delete();
-            da.Update(dt);
+            ds.Tables["Product"].Rows.Find(Pid).Delete();
+            da.Update(ds);
         }
         public void UpdateProduct(int Pid,int Price,int Stock)
         {
-            dt.Rows.Find(Pid)["Price"] = Price;
-            dt.Rows.Find(Pid)["Stock"] = Stock;
-            da.Update(dt);
+            ds.Tables[0].Rows.Find(Pid)["Price"] = Price;
+            ds.Tables[0].Rows.Find(Pid)["Stock"] = Stock;
+            da.Update(ds);
         }
         static void Main()
         {

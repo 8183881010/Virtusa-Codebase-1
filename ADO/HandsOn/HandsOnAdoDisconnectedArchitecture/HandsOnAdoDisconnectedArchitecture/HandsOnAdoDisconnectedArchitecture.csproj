@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>HandsOnAdoDisconnectedArchitecture.Demo8</StartupObject>
+    <StartupObject>HandsOnAdoDisconnectedArchitecture.Demo1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

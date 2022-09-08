@@ -26,11 +26,11 @@ namespace EComm.BusinessLayer
                 throw;
             }
         }
-        public void DeleteProduct(int pid)
+        public void DeleteProduct(int Pid)
         {
             try
             {
-                repository.DeleteProduct(pid);
+                repository.DeleteProduct(Pid);
             }
             catch (Exception)
             {

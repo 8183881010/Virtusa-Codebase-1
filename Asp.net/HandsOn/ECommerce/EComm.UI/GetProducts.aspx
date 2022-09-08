@@ -3,7 +3,7 @@
     <table align="center" style="width: 50%">
         <tr>
             <td>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" PageSize="3">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" PageSize="3" DataKeyNames="Pid">
                     <AlternatingRowStyle BackColor="#CCCCCC" />
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -21,12 +21,12 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
-                <br />
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="EComm.Entities.Product" DeleteMethod="DeleteProduct" SelectMethod="GetProducts" TypeName="EComm.BusinessLayer.ProductService" UpdateMethod="UpdateProduct">
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"  DeleteMethod="DeleteProduct" SelectMethod="GetProducts" TypeName="EComm.BusinessLayer.ProductService" UpdateMethod="UpdateProduct">
                     <DeleteParameters>
                         <asp:Parameter Name="Pid" Type="Int32" />
                     </DeleteParameters>
                 </asp:ObjectDataSource>
+                <br />
             </td>
         </tr>
     </table>

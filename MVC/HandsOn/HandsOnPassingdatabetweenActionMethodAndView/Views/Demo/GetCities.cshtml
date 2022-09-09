@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "GetCities";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetCities</h2>
+<hr />
+@foreach(var item in ViewBag.Cities)
+            {
+                <div style="font-size:30px">
+                    City:@item
+                </div>
+                <hr />
+            }

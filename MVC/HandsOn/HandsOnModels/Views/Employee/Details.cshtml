@@ -1,0 +1,14 @@
+﻿@model HandsOnModels.Models.Employee
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Employee Details</h2>
+<pre>
+Id:@Model.EmployeeId
+Name:@Model.Name
+JoinDate:@Model.JoinDate
+Designation:@Model.Designation
+Salary:@Model.Salary
+</pre>
+<a href="GetAll">back</a>

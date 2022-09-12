@@ -1,0 +1,28 @@
+﻿@model HandsOnMVCUsingModelValidation.Models.Login
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container">
+	@using (Html.BeginForm())
+	{
+		<table class="table">
+			<tr>
+				<td>Username</td>
+				<td>@Html.TextBoxFor(m => m.Username)</td>
+				<td>@Html.ValidationMessageFor(m => m.Username)</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td>@Html.PasswordFor(m => m.Password)</td>
+				<td>@Html.ValidationMessageFor(m => m.Password)</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="Login" class="btn btn-primary" />
+				</td>
+			</tr>
+		</table>
+	}
+</div>
+

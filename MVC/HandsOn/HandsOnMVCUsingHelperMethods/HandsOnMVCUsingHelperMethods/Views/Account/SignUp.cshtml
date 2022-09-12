@@ -1,0 +1,58 @@
+﻿@model HandsOnMVCUsingHelperMethods.Models.User
+@{
+    ViewBag.Title = "SignUp";
+}
+<div class="container">
+	<br />
+    @using(Html.BeginForm())
+            {
+				<table>
+					<tr>
+						<td>Name</td>
+						<td>@Html.TextBoxFor(m => m.Name)</td>
+					</tr>
+					<tr>
+						<td>Gender</td>
+						<td>
+							Male: @Html.RadioButtonFor(m => m.Gender, false)
+							FeMale:@Html.RadioButtonFor(m => m.Gender, false)
+						</td>
+					</tr>
+					<tr>
+						<td>DOB</td>
+						<td>@Html.TextBoxFor(m => m.Dob, null, new { type = "date" })</td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td>@Html.TextBoxFor(m => m.Email)</td>
+					</tr>
+					<tr>
+						<td>Mobile</td>
+						<td>@Html.TextBoxFor(m => m.MobileNo)</td>
+					</tr>
+					<tr>
+						<td>Country</td>
+						<td>@Html.DropDownListFor(m=>m.Country,new SelectList(new string[] {"India","China","US","UK" }))</td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td>@Html.PasswordFor(m=>m.Password)</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							@Html.CheckBox("accept") Accept all terms and conditoins
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="submit" value="SignUp" />
+						</td>
+						<td>
+							<input type="reset" value="Reset" />
+						</td>
+					</tr>
+				</table>
+            }
+</div>
+
+

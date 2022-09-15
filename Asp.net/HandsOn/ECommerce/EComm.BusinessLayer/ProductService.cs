@@ -38,11 +38,11 @@ namespace EComm.BusinessLayer
                 throw;
             }
         }
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(int price, int stock, int pid,string pname)
         {
             try
             {
-                repository.UpdateProduct(product);
+                repository.UpdateProduct(price,stock,pid,pname);
             }
             catch (Exception)
             {

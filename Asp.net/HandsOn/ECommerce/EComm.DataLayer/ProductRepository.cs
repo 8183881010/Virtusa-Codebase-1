@@ -50,11 +50,11 @@ namespace EComm.DataLayer
                 connection.Close();
             }
         }
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(int price,int stock,int pid,string pname)
         {
             try
             {
-                command = new SqlCommand($"Update Product set Price={product.Price},Stock={product.Stock} where Pid={product.Pid}", connection);
+                command = new SqlCommand($"Update Product set Price={price},Stock={stock} where Pid={pid}", connection);
                 connection.Open();
                 command.ExecuteNonQuery();
             }

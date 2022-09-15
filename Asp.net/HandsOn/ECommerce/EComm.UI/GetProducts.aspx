@@ -3,10 +3,10 @@
     <table align="center" style="width: 50%">
         <tr>
             <td>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" PageSize="3" DataKeyNames="Pid">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="Vertical" PageSize="3" DataKeyNames="PId">
                     <AlternatingRowStyle BackColor="#CCCCCC" />
                     <Columns>
-                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
                         <asp:BoundField DataField="Pid" HeaderText="Pid" SortExpression="Pid" />
                         <asp:BoundField DataField="Pname" HeaderText="Pname" SortExpression="Pname" />
                         <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
@@ -25,6 +25,12 @@
                     <DeleteParameters>
                         <asp:Parameter Name="Pid" Type="Int32" />
                     </DeleteParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="Price" Type="Int32" />
+                        <asp:Parameter Name="Stock" Type="Int32" />
+                        <asp:Parameter Name="Pid" Type="Int32" />
+                         <asp:Parameter Name="Pname" Type="String" />
+                    </UpdateParameters>
                 </asp:ObjectDataSource>
                 <br />
             </td>

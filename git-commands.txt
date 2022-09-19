@@ -1,0 +1,7 @@
+run the follwing command first time in the local machine
+git clone <repo_address>
+run the following commands when any changes in the local repository
+
+1. git add .
+2. git commit -m new_commit
+3. git push origin main/master
